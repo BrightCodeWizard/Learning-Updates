@@ -184,7 +184,6 @@ we did Optimization & Transactions. I practice some example of what we did.
 
 C. Web baseconcept 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -192,7 +191,7 @@ C. Web baseconcept
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Paris - Your Ultimate Travel Guide</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .card-img-container {
@@ -354,6 +353,8 @@ C. Web baseconcept
 </body>
 </html>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -503,130 +504,164 @@ C. Web baseconcept
     <script src="js/main.js"></script>
 </body>
 </html>
-ng index.html…]()
 
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map - Discover Paris</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 
-main.jdocument
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Discover Paris</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="map.html">Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-.addEventListener('DOMContentLoaded', function() {
     
-    const toggleForms = document.querySelectorAll('.toggle-form');
-    const loginForm = document.getElementById('loginForm');
-    const signupForm = document.getElementById('signupForm');
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Explore Paris</h2>
+        <div id="map"></div>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <h4>Popular Attractions</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">Eiffel Tower</li>
+                    <li class="list-group-item">Louvre Museum</li>
+                    <li class="list-group-item">Notre-Dame Cathedral</li>
+                    <li class="list-group-item">Arc de Triomphe</li>
+                    <li class="list-group-item">Sacré-Cœur</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    if (toggleForms) {
-        toggleForms.forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-               
-                if (this.textContent === 'Forgot password?') {
-                    alert('Please create a new account to reset your password.');
-                }
-                
-                if (signupForm.style.display === 'none') {
-                    loginForm.parentElement.style.display = 'none';
-                    signupForm.style.display = 'block';
-                } else {
-                    loginForm.parentElement.style.display = 'block';
-                    signupForm.style.display = 'none';
-                }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function initMap() {
+            const paris = { lat: 48.8566, lng: 2.3522 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: paris,
             });
-        });
-    }
-
-    
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            
-            console.log('Login attempt:', { email, password });
-            alert('Login functionality would be implemented here');
-        });
-    }
-
-    
-    const registerForm = document.getElementById('registerForm');
-    if (registerForm) {
-        registerForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('signupEmail').value,
-                password: document.getElementById('signupPassword').value,
-                confirmPassword: document.getElementById('confirmPassword').value,
-                phoneNumber: document.getElementById('phoneNumber').value,
-                dateOfBirth: document.getElementById('dateOfBirth').value,
-                country: document.getElementById('country').value,
-                language: document.getElementById('language').value,
-                interests: {
-                    museums: document.getElementById('museums').checked,
-                    food: document.getElementById('food').checked,
-                    history: document.getElementById('history').checked,
-                    shopping: document.getElementById('shopping').checked
-                },
-                newsletter: document.getElementById('newsletter').checked
-            };
 
             
-            if (formData.password !== formData.confirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
+            const attractions = [
+                { position: { lat: 48.8584, lng: 2.2945 }, title: "Eiffel Tower" },
+                { position: { lat: 48.8606, lng: 2.3376 }, title: "Louvre Museum" },
+                { position: { lat: 48.8530, lng: 2.3499 }, title: "Notre-Dame Cathedral" },
+                { position: { lat: 48.8738, lng: 2.2950 }, title: "Arc de Triomphe" },
+                { position: { lat: 48.8867, lng: 2.3431 }, title: "Sacré-Cœur" }
+            ];
 
-            console.log('Registration data:', formData);
-            alert('Thank you for registering!');
-            registerForm.reset();
-            
-            loginForm.parentElement.style.display = 'block';
-            signupForm.style.display = 'none';
-        });
-    }
-
-    
-    const feedbackForm = document.getElementById('feedbackForm');
-    if (feedbackForm) {
-        feedbackForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                rating: document.getElementById('rating').value,
-                comment: document.getElementById('comment').value,
-                visitDate: document.getElementById('visitDate').value
-            };
-            
-            console.log('Feedback submitted:', formData);
-            alert('Thank you for your feedback!');
-            feedbackForm.reset();
-        });
-    }
-
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
+            attractions.forEach(attraction => {
+                new google.maps.Marker({
+                    position: attraction.position,
+                    map: map,
+                    title: attraction.title
                 });
-            }
-        });
-    });
-});
-()
+            });
+        }
+    </script>
+ 
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Discover Paris</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Discover Paris</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="map.html">Map</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="feedback.html">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-style.css…
-()body {
+   
+    <div class="container">
+        <div class="form-container">
+            <h2 class="text-center mb-4">Share Your Experience</h2>
+            <form id="feedbackForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="rating" class="form-label">Rating</label>
+                    <select class="form-select" id="rating" required>
+                        <option value="">Select a rating</option>
+                        <option value="5">5 - Excellent</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="3">3 - Good</option>
+                        <option value="2">2 - Fair</option>
+                        <option value="1">1 - Poor</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Your Experience</label>
+                    <textarea class="form-control" id="comment" rows="5" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="visitDate" class="form-label">Date of Visit</label>
+                    <input type="date" class="form-control" id="visitDate" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+body {
     padding-top: 56px;
     min-height: 100vh;
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -790,87 +825,117 @@ style.css…
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+ function() {
+    
+    const toggleForms = document.querySelectorAll('.toggle-form');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map - Discover Paris</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Discover Paris</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="map.html">Map</a></li>
-                    <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    if (toggleForms) {
+        toggleForms.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+               
+                if (this.textContent === 'Forgot password?') {
+                    alert('Please create a new account to reset your password.');
+                }
+                
+                if (signupForm.style.display === 'none') {
+                    loginForm.parentElement.style.display = 'none';
+                    signupForm.style.display = 'block';
+                } else {
+                    loginForm.parentElement.style.display = 'block';
+                    signupForm.style.display = 'none';
+                }
+            });
+        });
+    }
 
     
-    <div class="container py-5">
-        <h2 class="text-center mb-4">Explore Paris</h2>
-        <div id="map"></div>
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <h4>Popular Attractions</h4>
-                <ul class="list-group">
-                    <li class="list-group-item">Eiffel Tower</li>
-                    <li class="list-group-item">Louvre Museum</li>
-                    <li class="list-group-item">Notre-Dame Cathedral</li>
-                    <li class="list-group-item">Arc de Triomphe</li>
-                    <li class="list-group-item">Sacré-Cœur</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            
+            console.log('Login attempt:', { email, password });
+            alert('Login functionality would be implemented here');
+        });
+    }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        function initMap() {
-            const paris = { lat: 48.8566, lng: 2.3522 };
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 13,
-                center: paris,
-            });
+    
+    const registerForm = document.getElementById('registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('signupEmail').value,
+                password: document.getElementById('signupPassword').value,
+                confirmPassword: document.getElementById('confirmPassword').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                dateOfBirth: document.getElementById('dateOfBirth').value,
+                country: document.getElementById('country').value,
+                language: document.getElementById('language').value,
+                interests: {
+                    museums: document.getElementById('museums').checked,
+                    food: document.getElementById('food').checked,
+                    history: document.getElementById('history').checked,
+                    shopping: document.getElementById('shopping').checked
+                },
+                newsletter: document.getElementById('newsletter').checked
+            };
 
             
-            const attractions = [
-                { position: { lat: 48.8584, lng: 2.2945 }, title: "Eiffel Tower" },
-                { position: { lat: 48.8606, lng: 2.3376 }, title: "Louvre Museum" },
-                { position: { lat: 48.8530, lng: 2.3499 }, title: "Notre-Dame Cathedral" },
-                { position: { lat: 48.8738, lng: 2.2950 }, title: "Arc de Triomphe" },
-                { position: { lat: 48.8867, lng: 2.3431 }, title: "Sacré-Cœur" }
-            ];
+            if (formData.password !== formData.confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
 
-            attractions.forEach(attraction => {
-                new google.maps.Marker({
-                    position: attraction.position,
-                    map: map,
-                    title: attraction.title
+            console.log('Registration data:', formData);
+            alert('Thank you for registering!');
+            registerForm.reset();
+            
+            loginForm.parentElement.style.display = 'block';
+            signupForm.style.display = 'none';
+        });
+    }
+
+    
+    const feedbackForm = document.getElementById('feedbackForm');
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                rating: document.getElementById('rating').value,
+                comment: document.getElementById('comment').value,
+                visitDate: document.getElementById('visitDate').value
+            };
+            
+            console.log('Feedback submitted:', formData);
+            alert('Thank you for your feedback!');
+            feedbackForm.reset();
+        });
+    }
+
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
                 });
-            });
-        }
-    </script>
- 
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
-</body>
-</html>
-oading map.html…]()
+            }
+        });
+    });
+
+
+
+
 
