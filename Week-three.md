@@ -145,4 +145,39 @@ class Calculator {
 
 
 
+B. Database concept 
+we did Optimization & Transactions. I practice some example of what we did.
+
+
+1. --You have a table employees with 1 million records. Write an SQL query to create an index on the last_name column to speed up searches.
+
+   CREATE INDEX idx_last_name ON employees(last_name);
+   SELECT * FROM employees WHERE last_name = 'Smith';
+
+
+
+
+2. --Create an index on city and last_name to speed up filtering and sorting
+    CREATE INDEX idx_city_lastname ON customers(city, last_name);
+
+
+3. --You have a sales table with millions of records. How would you partition it based on sale_date?
+   
+    ALTER TABLE sales  
+    PARTITION BY RANGE(YEAR(sale_date)) (  
+        PARTITION p1 VALUES LESS THAN (2022),  
+        PARTITION p2 VALUES LESS THAN (2023),  
+        PARTITION p3 VALUES LESS THAN (2024)  
+    );
+
+
+4. --Write an SQL transaction to update a user's bank balance and commit the transaction.
+
+   START TRANSACTION;
+    
+    UPDATE accounts SET balance = balance - 500 WHERE account_id = 1;
+    UPDATE accounts SET balance = balance + 500 WHERE account_id = 2;
+    
+    COMMIT;
+
 
