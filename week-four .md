@@ -4,6 +4,8 @@
       c.	Portfolio website  https://clever-parfait-94e4ca.netlify.app/#contact
 
 
+
+
  2. Java
     a. we let about Arrays in java.
     /**Write a Java program that creates an array of 5 integers,
@@ -39,6 +41,31 @@ public class ArrayExample {
         System.out.println("Largest element: " + max);
     }
 }
+
+
+
+3. Database
+         we did Filtering & Sorting Data 
+  a.  - Retrieve all employees from the "employees"
+      table who have a salary greater than 50000.-
+
+         SELECT * FROM employees WHERE salary > 50000;
+
+
+ b.  -  Find all students from the "students" table
+   who are in class 10 and have scored more than 80 marks.-
+
+      SELECT * FROM students WHERE class = 10 AND marks > 80;
+
+c. -Get a list of products from the "products" 
+      table sorted by price in descending order.-
+            
+      SELECT * FROM products ORDER BY price DESC;
+
+      
+
+
+
 
 
 
