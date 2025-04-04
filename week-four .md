@@ -20,7 +20,9 @@ public class ArrayExample {
         for (int i = 0; i < numbers.length; i++) {
             System.out.println("Element at index " + i + ": " + numbers[i]);
         }
+
     }
+
 }
 
 
