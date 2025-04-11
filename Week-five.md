@@ -62,5 +62,7 @@ public class Student {
 
 
 Web development 
+i made a feedback page and i published it on netlify 
 
+https://sparkly-macaron-2febf6.netlify.app/
 
