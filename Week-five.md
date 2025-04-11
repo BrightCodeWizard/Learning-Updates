@@ -61,8 +61,27 @@ public class Student {
 
 
 
-Web development 
-i made a feedback page and i published it on netlify 
+2. Web development 
 
-https://sparkly-macaron-2febf6.netlify.app/
+
+
+        //i made a feedback page and i published it on netlify 
+
+   https://sparkly-macaron-2febf6.netlify.app/
+
+
+
+
+
+
+
+
+3. Database
+   --Use SQL to populate the Customer_T with the following:  CustomerID: 402067, CustomerName: Just Wills,
+   CustomerAddress: 0023 Wills Main Street, CustomerCity: Koforidua, CustomerRegion: Eastern,
+   Customer Postal Code:  ERA1235, Customer Contact Number: +2334587778777 ----                       
+
+
+    INSERT INTO Customer_T (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerRegion, CustomerPostalCode, CustomerContactNumber)
+    VALUES (402067, 'Just Wills', '0023 Wills Main Street', 'Koforidua', 'Eastern', 'ERA1235', '+2334587778777');
 
