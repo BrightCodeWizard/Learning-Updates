@@ -5,14 +5,14 @@ student information (name, roll number, and grade)*/
 
 
 
-public class Student {
+    public class Student {
 
-    private String name;
-    private int rollNumber;
-    private String grade;
+        private String name;
+        private int rollNumber;
+        private String grade;
 
-    //student details
-    public Student(String name, int rollNumber, String grade) {
+        //student details
+        public Student(String name, int rollNumber, String grade) {
         this.name = name;
         this.rollNumber = rollNumber;
         this.grade = grade;
@@ -28,30 +28,30 @@ public class Student {
     }
 
     
-    public int getRollNumber() {
-        return rollNumber;
-    }
+        public int getRollNumber() {
+            return rollNumber;
+        }
 
-    public void setRollNumber(int rollNumber) {
-        this.rollNumber = rollNumber;
-    }
+        public void setRollNumber(int rollNumber) {
+            this.rollNumber = rollNumber;
+        }
 
    
-    public String getGrade() {
-        return grade;
-    }
+        public String getGrade() {
+            return grade;
+        }
 
   
-    public void setGrade(String grade) {
+        public void setGrade(String grade) {
         this.grade = grade;
-    }
+        }
 
     
    
-    public String toString() {
-        return "Name: " + name + ", Roll Number: " + rollNumber + ", Grade: " + grade;
+        public String toString() {
+            return "Name: " + name + ", Roll Number: " + rollNumber + ", Grade: " + grade;
+        }
     }
-}
 
 
 
@@ -65,9 +65,9 @@ public class Student {
 
 
 
-        //i made a feedback page and i published it on netlify 
+     //i made a feedback page and i published it on netlify 
 
-   https://sparkly-macaron-2febf6.netlify.app/
+       https://sparkly-macaron-2febf6.netlify.app/
 
 
 
@@ -77,11 +77,13 @@ public class Student {
 
 
 3. Database
+
+
    --Use SQL to populate the Customer_T with the following:  CustomerID: 402067, CustomerName: Just Wills,
    CustomerAddress: 0023 Wills Main Street, CustomerCity: Koforidua, CustomerRegion: Eastern,
    Customer Postal Code:  ERA1235, Customer Contact Number: +2334587778777 ----                       
 
 
-    INSERT INTO Customer_T (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerRegion, CustomerPostalCode, CustomerContactNumber)
-    VALUES (402067, 'Just Wills', '0023 Wills Main Street', 'Koforidua', 'Eastern', 'ERA1235', '+2334587778777');
+        INSERT INTO Customer_T (CustomerID, CustomerName, CustomerAddress, CustomerCity, CustomerRegion, CustomerPostalCode, CustomerContactNumber)
+        VALUES (402067, 'Just Wills', '0023 Wills Main Street', 'Koforidua', 'Eastern', 'ERA1235', '+2334587778777');
 
