@@ -1,4 +1,6 @@
   1. Java
+ 
+  
   /* write a java program that reads a number in inches and converts it to meters*/
 
         import java.util.Scanner;
@@ -168,7 +170,7 @@
 
 3. Database
 
-              -- Write a MySQL query to create a simple table countries including columns country_id, country_name and region_id.
+   -- Write a MySQL query to create a simple table countries including columns country_id, country_name and region_id.
 
        create database Map_db;
        use MP_db;
