@@ -166,6 +166,23 @@
               text-decoration: underline;
           }
 
+3. Database
 
-           
+              -- Write a MySQL query to create a simple table countries including columns country_id, country_name and region_id.
+
+       create database Map_db;
+       use MP_db;
+
+        
+        create table countries
+
+         COUNTRY_ID varchar(2),
+
+        COUNTRY_NAME varchar(40),
+
+        
+        REGION_ID decimal(10,0)
+        );
+    
+                      
 
