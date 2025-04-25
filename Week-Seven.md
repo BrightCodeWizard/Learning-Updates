@@ -129,3 +129,137 @@ Web development
 
 
     
+2 Java
+
+
+
+/*Write a Java program to create a class called “Cat” with instance variables name and age.
+Implement a default constructor that initializes the name to "Unknown" and the age to 0.
+ Print the values of the variables.*/
+
+    public class Cat {
+
+    private String name;
+        private int age;
+
+        public Cat() {
+            this.name = "Unknown";
+
+            this.age = 0;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public static void main(String[] args) {
+            Cat myCat = new Cat();
+            System.out.println("Cat's Name: " + myCat.getName());
+            System.out.println("Cat's Age: " + myCat.getAge());
+        }
+
+    }
+
+
+
+/*Write a Java program to create a class called Dog with instance variables name and color.
+Implement a parameterized constructor that takes name and color as parameters and initializes
+the instance variables.Print the values of the variables*/
+        
+    public class Dog {
+
+        private String name;
+        private String color;
+
+
+        public Dog(String name, String color) {
+
+            this.name = name;
+
+            this.color = color;
+        }
+
+
+        public static void main(String[] args) {
+
+            Dog myDog = new Dog("Bailey", "Black");
+
+            System.out.println("Dog's Name: " + myDog.name);
+            System.out.println("Dog's Color: " + myDog.color);
+        }
+    }
+
+
+/*Write a Java program to create a class called "Book" with instance variables title, author, and price. Implement a default constructor and two parameterized constructors:
+One constructor takes title and author as parameters.
+The other constructor takes title, author, and price as parameters.
+Print the values of the variables for each constructor.
+ */
+
+
+    public class Book {
+
+        private String title;
+        private String author;
+        private double price;
+
+        public Book() {
+
+            this.title = "Unknown";
+
+            this.author = "Unknown";
+
+            this.price = 0.0;
+        }
+
+
+        public Book(String title, String author) {
+
+            this.title = title;
+
+            this.author = author;
+
+            this.price = 0.0;
+        }
+
+
+        public Book(String title, String author, double price) {
+
+            this.title = title;
+
+            this.author = author;
+
+            this.price = price;
+        }
+
+
+        public static void main(String[] args) {
+
+            Book book1 = new Book();
+
+            System.out.println("Book1 Title: " + book1.title);
+            System.out.println("Book1 Author: " + book1.author);
+            System.out.println("Book1 Price: " + book1.price);
+
+
+            Book book2 = new Book("MR Bright", "Kwmame Cash");
+
+            System.out.println("Book2 Title: " + book2.title);
+            System.out.println("Book2 Author: " + book2.author);
+            System.out.println("Book2 Price: " + book2.price);
+
+
+            Book book3 = new Book("LIfe", "Mr Dadson", 18.99);
+            // Print the values of the instance variables for book3
+            System.out.println("Book3 Title: " + book3.title);
+            System.out.println("Book3 Author: " + book3.author);
+            System.out.println("Book3 Price: " + book3.price);
+        }
+    }
+
+
+
