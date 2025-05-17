@@ -91,11 +91,12 @@ Web developent
       
           <div class="wrapper">
               <h1 class="heading">Schedule your Subject</h1>
-              <label for="addingNote" class="addingNote">Add Subject</label><br>
-              <input type="textarea" id="title" placeholder="Subject"><br>
+      
+              <label for="title" class="addingNote">Add Subject</label><br>
+              <input type="text" id="title" placeholder="Subject"><br>
               
-              <label for="addingNote" class="addingNote">Add Teacher</label><br>
-              <input name="textarea" type="text" id="note-text" placeholder="Teacher's name"><br>
+              <label for="note-text" class="addingNote">Add Teacher</label><br>
+              <input name="text" type="text" id="note-text" placeholder="Teacher's name"><br>
       
           
               <label for="time" class="addingNote">Add Time</label><br>
@@ -105,12 +106,13 @@ Web developent
           </div>
       
           
-          <ul id="classList"></ul>
+          <ul id="classList" class="subject-list"></ul>
         
       
         <script src="script.js"></script>
       </body>
       </html>
+
 
 
 
