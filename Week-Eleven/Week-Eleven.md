@@ -227,3 +227,106 @@ Web developmenrt
     displayRecords();
 
     
+
+
+
+
+2. Java
+
+
+    /**
+ Write a program called PensionContributionCalculator that reads
+ the monthly salary and age (in int) of an employee. Your program shall calculate
+ the employee's, employer's and total contributions (in double); and print
+ the results rounded to 2 decimal places.
+ **/
+
+
+        import java.util.Scanner;
+        
+        public class PensionContributionCalculator {
+        
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+        
+                System.out.print("Enter the monthly salary: ");
+                double salary = scanner.nextDouble();
+        
+                System.out.print("Enter the age: ");
+                int age = scanner.nextInt();
+        
+                double employeeRate;
+                double employerRate;
+        
+                if (age <= 55) {
+                    employeeRate = 0.20;
+                    employerRate = 0.17;
+                } else if (age <= 60) {
+                    employeeRate = 0.13;
+                    employerRate = 0.13;
+                } else if (age <= 65) {
+                    employeeRate = 0.075;
+                    employerRate = 0.09;
+                } else {
+                    employeeRate = 0.05;
+                    employerRate = 0.075;
+                }
+        
+        
+                double employeeContribution = salary * employeeRate;
+                double employerContribution = salary * employerRate;
+                double totalContribution = employeeContribution + employerContribution;
+        
+        
+                System.out.printf("The employee's contribution is: $%.2f%n", employeeContribution);
+                System.out.printf("The employer's contribution is: $%.2f%n", employerContribution);
+                System.out.printf("The total contribution is: $%.2f%n", totalContribution);
+        
+                scanner.close();
+            }
+        }
+
+
+
+/**
+ Write a program that prompts user for a positive integer.
+ The program shall read the input as int; and print the "reverse" of
+ the input integer.
+**/
+
+
+      import java.util.Scanner;
+      
+      public class ReverseInteger {
+      
+          public static void main(String[] args) {
+              Scanner scanner = new Scanner(System.in);
+      
+      
+              System.out.print("Enter a positive integer: ");
+              int number = scanner.nextInt();
+      
+      
+              if (number <= 0) {
+                  System.out.println("The number must be a positive integer.");
+              } else {
+                  int reversed = 0;
+      
+      
+                  while (number != 0) {
+                      int digit = number % 10;
+                      reversed = reversed * 10 + digit;
+                      number /= 10;
+                  }
+      
+                  System.out.println("Reversed number: " + reversed);
+              }
+      
+              scanner.close();
+          }
+      }
+
+
+
+
+     
