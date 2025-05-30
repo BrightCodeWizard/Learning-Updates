@@ -52,3 +52,124 @@ Write a Java program that reads a number in inches and converts it to meters
                       }
 
 
+
+
+WEB DEVELOPMENT 
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Age Calculator</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div class="container">
+        <h1>Age Calculator</h1>
+          <div class="form">
+            <label for="dob">Enter your date of birth</label>
+            <input type="date" name="dob" id="dob">
+            <button type="submit" id="btn">Calculate Age</button>
+            <p id="result">You are  years old</p>
+          </div>   
+      </div>
+        <script src="script.js"></script>
+    </body>
+    </html>
+
+
+
+
+        body{
+        padding: 20px;
+        font-family: "Montserrat",sans-serif;
+        background-color: gray;
+      }
+      
+      .container{
+          background-color: yellowgreen;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0,0.2 );
+          border-radius: 5px;
+          padding: 20px;
+          max-width: 600px;
+          margin: 50px auto;
+      }
+      
+      h1{
+          text-align: center;
+          margin-top: 0px;
+          margin-bottom: 20px;
+          font-size: 36px;
+        }
+            
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        }
+                  
+      label{
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+                                 
+      input{
+        padding: 8px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 300px;
+      }
+                                  
+      button{                                
+        color: white;
+        background-color:  #0062cc;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px;
+        cursor: pointer;
+        transition: background-color .3s ease;
+      }
+                                 
+      button:hover{
+        background-color: rgb(137, 137, 253);
+      }
+                                  
+      #result{
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+
+
+
+
+
+
+    document.getElementById('btn').addEventListener('click', function () {
+      const dob = document.getElementById('dob').value;
+      const result = document.getElementById('result');
+    
+      if (!dob) {
+        result.textContent = "Please enter your date of birth.";
+        return;
+      }
+    
+      const birthDate = new Date(dob);
+      const today = new Date();
+    
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDiff = today.getMonth() - birthDate.getMonth();
+      const dayDiff = today.getDate() - birthDate.getDate();
+    
+      if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        age--;
+      }
+    
+      result.textContent = `You are ${age} years old.`;
+    });
+
