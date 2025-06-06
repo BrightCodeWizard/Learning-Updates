@@ -140,20 +140,88 @@ Java
   
   
   Operators 
+
+  
   Operators are symbols used to perform operation on variable and values. 
+
+  
   Examples 
+  
   Assignment: = 
+  
   Addition: +
+  
   Subtraction: - 
+  
   Multiplication: * 
+  
   Division:  /
   
   Examples 
+
+
+      //examples 1
+    public class Operators {
+        public static void main(String[]arg){
+            double score = 1.0 + 2.0 +3.0;
+            System.out.println(score);
+            score = score / 2.0;
+            System.out.println(score);
+    
+            //example 2
+            double copy = score;
+            copy = copy / 2.0;
+            System.out.println(copy);
+            System.out.println(score);
+        }
+    }
   
   
   String Concatenation (+)
-   String concatenation is the process of combining two or more strings to form a new string. This can be done using various methods, including the + operator, the concat() method, and the StringBuilde. 
+
+  
+String concatenation is the process of combining two or more strings to form a new string. This can be done using various methods, including the + operator, the concat() method, and the StringBuilde. 
   Examples 
+  
+  
+        //Using the + Operator
+      public class StringConcatenation {
+          public static void main(String[]arg){
+              String One = "Hello";
+              String Two = "Word";
+              String Three = One + Two;
+      
+              System.out.println(Three);
+      
+              //Using the concat() Method
+              String first = "Kojo";
+              String Second = "Dan";
+              String Last = first.concat(Second);
+              System.out.println(Last);
+      
+      
+              //Using the StringBuilder Class
+              StringBuilder work = new
+              StringBuilder("Java");
+              work.append("program");
+              String result = work.toString();
+              System.out.println(result);
+          }
+      }
+
    
   Assignment
-  
+
+
+
+      public class GravityCalculator {
+        public static void main(String[]arg){
+            double gravity = 9.81; // earth's gravity in m/s^2
+            double initialvelocity = 0.0;
+            double fallingTime = 10.0;
+            double initialPosition = 0.0;
+            double finalPosition = 0.0;
+            System.out.println("The object position after  " + fallingTime + "seconds is " + finalPosition + "m");
+            
+        }
+    }
