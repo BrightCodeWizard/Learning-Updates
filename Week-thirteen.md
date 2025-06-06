@@ -1,25 +1,56 @@
 Java 
 
-
   
   Introduction to Programming in Java
+
+  
   Types, Variable, Operators 
-  -	The computer consists of Memory, Central Processing Unit (CPU) and                 Input/Output (IO) devices. 
-  -	CPU instruction is a command given to the processor to perform a specific           task. 
-  -	Programming Languages   is a set of instructions that a computer can                understand and execute to perform a specific task. 
+
+
+  
+  -	The computer consists of Memory, Central Processing Unit (CPU) and                 Input/Output (IO) devices.
+
+    
+  -	CPU instruction is a command given to the processor to perform a specific           task.
+
+    
+  -	Programming Languages   is a set of instructions that a computer can                understand and execute to perform a specific task.
+
+     
   o	Types of programing language 
+
+  
   	Procedural Programming Languages: focus on procedures and steps to achieve a        goal (e.g., C, Java)
+
+  
   	Object -Oriented Programming Language: organize code using object and classes       (e.g. Java, C++, Python)
+
+  
   	Functional Programming Language: Emphasize on function and immutable data             (Haskell, Lisp)
+
+  
   	. Scripting Languages: Designed for rapid development and execution (e.g.,          Python, JavaScript, Ruby).
+
+
+  
   	 Declarative Programming Languages: Focus on specifying what the program              should accomplish (e.g., SQL, Prolog).
 
 
 Java 
+
+
   •	Java is an object-oriented programming language that's platform-independent.
+
+  
   •	It's designed to run on any device that has a Java Virtual Machine (JVM).
+
+  
   •	Java syntax is similar to C++ but is simpler. 
+
+  
   Compiling Java 
+
+  
   Compiling Java involves translating Java source code into bytecode that can be     executed by the Java Virtual Machine (JVM).
   
   
