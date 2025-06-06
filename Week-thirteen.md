@@ -1156,46 +1156,102 @@ To use this command, you need to type in git clone followed by url of the reposi
 MIT OPENCOURSEWARE -	Introduction to CS and Programming using Python
 
 
+
 Introduction to CS and Programming using Python
 Different between declarative knowledge and imperative knowledge 
 Declarative knowledge is about fact and imperative knowledge is more about Knowing how to perform action. Computer science deals with imperative knowledge. Programming is when u write something for the computer to do. 
 
+
+
 An Algorithm 
+
 Is sequence of steps used to solve problem 
+
+
 Example 
+
+
 Process of Searching for a Word in a Dictionary
 •	Open the dictionary to the middle page.
-•	If the word you are looking for is before this page, search in the first half.
+•	If the word you are looking for is before this page, search in the first         half.
 •	If the word is after this page, search in the second half.
 •	Repeat the process until you find the word.
 
+
+
+
 We use computer to execute these algorithms. Also store data. They can’t make decision unless give an instruction.
+
+
 Interpreter is a special program that executed instructions. 
+
+
 Memory is where things are stored.
+
+
 Arithmetic Logic Unit does the operation, such as add, subtract, multiply and compare things.
-  Control Unit It directs the operation of the processor by managing the flow of data between the CPU, memory, and input/output devices. 
+
+
+
+Control Unit It directs the operation of the processor by managing the flow of data between the CPU, memory, and input/output devices. 
+
+
+
 Anything computable in one language is computable in any other programming language. 
+
+
 Primitives in Programming Languages are number, strings, simple operators. 
+
+
 These primitives of a programming language help in building up the Syntax of the language.
+
 
 
 NB
 Programming languages, there is no multiple meanings. Programs have only one meaning.
 
-Python Programs 
+
+
+Python Program
+
+
+
 A program is writing a sequence of definition and commands.  
+
+
 Python programs are written a file editor or in a shell.
-Objects 
+
+
+Objects
+
+
 We create object in the program and manipulate them. An object has a type that tell python what is allow to do.
 
+
 Types of primitives of python 
-int –represent integers, ex. 4
-float –represent real numbers, ex.  2.0  
-bool –represent Boolean values True and False 
- None Type –special and has one value, None  
-Can use type () to see the type of an object
+
+
+
+int – represent integers, ex. 4
+
+float – represent real numbers, ex.  2.0  
+
+
+bool – represent Boolean values True and False 
+
+
+None Type – special and has one value, None 
+
+
+Can use type () - to see the type of an object
+
+
+
+
 
 Example 1
+
+
 
 Type ()
 
@@ -1236,12 +1292,18 @@ Type ()
 
 
 
+
+
 NB
 Capitalization matters in Python  
 
 
 
+
+
 Casting:  convert object of one type to another
+
+
 
 
 Examples
@@ -1288,6 +1350,8 @@ Examples
 Expressions: combine object and operation to form expression 
 
 
+
+
 Example 
 
 
@@ -1332,6 +1396,8 @@ Example
 	8.0
 
 
+
+
 Operators on int and float
 1+2 	sum
 2 – 1	difference 
@@ -1346,10 +1412,15 @@ Operators on int and float
 
 
 Variable: Is bound to one single value at a given time
+
+
  
 The equal sign is an assignment. 
 
+
+
 We can use variable with an operator  
+
 
 
 
