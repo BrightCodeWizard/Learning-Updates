@@ -199,3 +199,122 @@ Belong to the class, not an instance.
 Parameters are variables passed into methods to provide input 
 values for processing. They allow methods to be more flexible 
 and reusable by accepting different values each time they are called.
+
+
+
+
+
+
+
+
+
+
+
+Cs50
+
+
+
+
+Git 
+
+
+Git is version control too.
+-	It helps to keep track of changes to codes. 
+-	It helps to synchronizes code between different people. 
+-	It helps test changes to code without losing the original. 
+-	It helps revert back to old version of code. S
+
+
+
+
+
+
+
+
+Git project is stored online on GitHub, so that it can be accessed anywhere when needed 
+
+
+GitHub 
+To create git file, you to create a repository. Github.com/new.
+
+
+
+
+
+
+
+How to create a new file in terminal
+a.	 Type touch and file name to crate a new file
+
+
+
+
+
+
+
+Git command  
+1.	Git clone: is a command that can be run in order to take a repository from the internet and download it onto our own computer. 
+To use this command, you need to type in git clone followed by url of the repository (git clone<URL>) 
+2.	 Code.: is use to create a new file 
+3.	git commit: is used to save current state of all of the files, folder and other assets that exist inside of the repository.
+4.	git add: is used to add a file as one to track the next time.  
+5.	git status: is used to check the state of a file or folder.
+6.	git push: is used to more files to GitHub.
+7.	git pull: is used to download the latest version of the repository on git to local pc 
+8.	merge conflicts: occurs when changes are done on the same repository are on the same line. 
+9.	get log: used for track keeping 
+
+
+
+
+
+Python
+
+
+
+Print (“Hello world”) is the first program. It will Hello world as this program runs. Print is a function in python. The function in python takes the arguments inside of parentheses, which the input to the print function.
+
+
+
+
+The extension for python is .py. python also supports variables. 
+
+
+
+
+Variables 
+a = 38(int)
+b = 1.6 (float)
+c = “Hello!” (str)
+d = True(bool)
+e = None (None Type)
+
+
+
+
+unlike other languages like c, or java where you have to specify the datatype of every variable like int a to mean a is an integer. Python doesn’t require you to state the datatype of each variable.
+
+
+
+
+Input is a function is used to prompts the user for input from users. They can also be saved in a variable. 
+
+
+
+Python support all of the same other features that are core to many procedural programming languages, such as conditions, for examples.
+
+
+
+
+ Data structure 
+1.	List – sequence of mutable values
+2.	Tuple – sequence of immutable values 
+3.	Set – collection of unique values 
+4.	dict  - collection of key-value pairs
+
+
+
+
+Examples
+
+
