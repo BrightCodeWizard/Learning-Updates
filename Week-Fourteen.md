@@ -442,3 +442,234 @@ Examples
           print(p.x)
           print(p.y)
 
+
+
+
+
+
+
+
+**MIT**
+
+
+
+
+
+
+Strings, input/output, and branching.
+
+
+
+
+Stings
+
+
+
+ It an object type, the consist of a sequence of case sensitive characters. The character can be anything, such as, lowercase letter, uppercase letters, numbers, and special characters. 
+
+
+ 
+To crate a string object in python is by enclosing the characters with a quotation marks. 
+
+
+
+
+
+Examples
+A = “me”
+Z = ‘you’ 
+
+
+
+String concatenation:  taken two string characters puts them together in a new object.
+
+
+
+
+Examples
+
+
+
+B =” myself”
+C = a+b
+ D = a + “” + b 
+Silly = a * 3
+
+
+Exercise 
+
+
+
+You try it!
+
+
+ len()is a function used to retrieve the length of a string in the parentheses
+
+
+
+slicing is done on string using []
+
+
+
+
+immutable strings 
+string is immutable, that’s it cannot be modified. 
+
+
+
+
+Input/output 
+
+
+Python provides several ways to handle input and output operations.
+
+
+
+Input
+
+
+•	Using input() function: The input() function in Python is used to take 
+
+input from the user. It returns a string value.
+
+•	Using sys.stdout.write() function: The sys.stdout.write() function in Python is used to print output to the screen.
+
+
+f-strings I python are a feature in Python that allows you to embed expressions inside string literals, using the f prefix before the string. This allows you to easily format strings with variables and expressions.
+
+
+
+Examples 
+
+
+Binding variables and values
+
+
+
+In Python, variables are used to store and manipulate values. When you assign a value to a variable, you are binding the variable to that value.
+
+
+
+Example 
+ X= 5
+Y = “hello”
+
+
+Comparison Operators in Python
+
+
+Comparison operators are used to compare two values and determine whether they are equal, not equal, greater than, less than. 
+Examples 
+
+
+i > j 
+
+
+i >= j 
+
+
+i < j 
+
+
+i <= j
+
+ 
+ i == j 
+
+
+i != j
+
+
+
+
+EXamples 
+
+
+
+          # Try Newton Raphson for cube root
+          x = int(input('what x to find the cube root of ?'))
+          g = int(input('what guess to start with? '))
+          print('current estimate cube =', g**3)
+          
+          next_g = g - ((g**3 - x)) / ((3*g**2))
+          print('Next guess to try = ', next_g)
+
+
+
+
+          name = "Kofi"
+          age = 20
+          print(f"My name is {name} and I am {age} years old.")
+
+
+
+
+          a = 5
+          b = 3
+          
+          print(a == b)
+          print(a != b)
+          print(a > b)
+          print(a < b)
+          print(a >= b)
+          print(a <= b)
+
+
+
+
+
+
+
+          #strings
+          # what's the value of s1 and s2
+          b = ":"
+          c = ")"
+          s1 = b + 2*c
+          
+          f = "a"
+          g = "b"
+          h = "3"
+          s2 = (f+g) * int(h)
+          print(s1, s2)
+          
+          
+          ## Type this in the console
+          a = 'me'
+          b = "myself"
+          c = a + " " + b
+          d = a + c
+          silly = "abc"
+          
+          s = "abc"
+          len(s)
+          
+          print(a, b, c, d, silly, s)
+
+
+
+          s = "ABC d3f ghi"
+          
+          s[3:len(s)-1]
+          s[4:0:-1]
+          s[6:3]
+          
+          print(s)
+
+
+
+
+          ##  Write a program that
+           # Asks the user for a verb
+           # Prints “I can _ better than you” where you replace _ with the verb.
+           # Then prints the verb 5 times in a row separated by spaces.
+          
+          
+          verb = input("Enter a verb: ")
+          
+          print(f"I can {verb} better than you")
+          
+          print(verb + " " * 5)
+
+
+          
+          
