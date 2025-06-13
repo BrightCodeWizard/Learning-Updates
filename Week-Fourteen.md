@@ -105,8 +105,8 @@ To fix a mismatched type error, make sure that the data type of the variable mat
 Example
 
 
-in x = “10”
-String five = 5;
+          in x = “10”
+          String five = 5;
 
 
 Conversion by casing 
