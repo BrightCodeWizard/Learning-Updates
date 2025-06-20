@@ -212,6 +212,20 @@ o	Files in the app folder
 
 
 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
     
         Windows PowerShell
         Copyright (C) Microsoft Corporation. All rights reserved.
@@ -336,4 +350,84 @@ o	Files in the app folder
         Starting development server at http://127.0.0.1:8000/
         Quit the server with CTRL-BREAK.
         
+
+
+
+
         
+**JAVA**
+
+
+
+
+
+Loops, Arrays
+ A loop is a programming concept used to repeat a set of instructions until a certain condition is met. It’s like telling a computer, “Keep doing this task over and over until I say stop.
+There are different types of loops, but the most common are:
+•	For loop – repeats a block of code a specific number of times.
+•	While loop – keeps repeating as long as a condition remains true.
+•	Do-while loop – similar to a while loop, but it always runs the code at least once before checking the condition.
+Loops are super useful when you want to automate repetitive tasks, like processing items in a list or counting from 1 to 100. Want to see an example in code?
+
+Examples 
+
+
+
+
+Arrays 
+An array is a collection of elements of the same data type stored in contiguous memory locations. Arrays are used to store a fixed-size, homogeneous collection of elements
+
+
+    public class EmptyArray {
+        public static void main(String[] args) {
+            int[] scores = new int[5];  // creates an array of size 5 with default values (0)
+    
+            scores[0] = 95;
+            scores[1] = 88;
+    
+            for (int i = 0; i < scores.length; i++) {
+                System.out.println("Score " + i + ": " + scores[i]);
+            }
+        }
+    }
+
+     
+     public class StringArray {
+         public static void main(String[]arg){
+             String[] fruits = {"Apple", "Banana", "Cherry"};
+     
+             for (String fruit : fruits) {
+                 System.out.println(fruit);
+             }
+         }
+     }
+
+
+
+
+
+
+     public class WhileLoop {
+    public static void main(String []args) {
+        int i = 1;
+        while (i <= 5) {
+            System.out.println("Count:  " + 1);
+            i++;
+        }
+    }
+    }
+
+    
+    public class Forloop {
+        public static void main (String[] arg)  {
+            for(int i = 2; i <= 5; i++){
+                System.out.println("Count:  " + i);
+            }
+        }
+    }
+
+
+
+
+
+
