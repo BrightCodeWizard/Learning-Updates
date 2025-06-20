@@ -1,5 +1,10 @@
 **MIT**
+
+
+
 Iteration
+
+
  Iteration in Python refers to the process of repeating a process multiple time. It's like telling the computer, “Keep doing this until I say stop” or “Do this for every item in a collection.”
 
 Way to perform iteration in python  
