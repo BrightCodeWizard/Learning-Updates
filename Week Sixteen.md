@@ -40,10 +40,10 @@ Looping through an array.
   
      public class Arrays {
          public static  void main(String[]arg){
-             /*int [] values = new int [5];
+             int [] values = new int [5];
              values [0] = 12;
              values [4] = 12;
-             //values [5] = 12;*/
+             //values [5] = 12;
      
             // Accessing Array
              int[] values  = {12, 24, -23, 47};
