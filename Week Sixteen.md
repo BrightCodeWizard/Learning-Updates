@@ -1,4 +1,4 @@
-**Java**
+1. **Java**
 
 
 
@@ -102,5 +102,153 @@ Looping through an array.
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. **MIT **
+
+
+
+
+
+ Loop over string guess-and-check, binary 
+
+ break statement-
+it is used to exit loop that surrounds that break statement.  
+Strings and loops 
+
+
+    
+    from wsgiref.util import guess_scheme
+    
+    sum = 0
+    for i in range(5, 11, 2):
+        sum +=i
+        if sum == 5:
+            break
+            sum += 1
+            print(sum)
+    
+    
+    # looping over characters
+        s = "demo loops-fruit loops"
+        for index in range(len(s)):
+            if s[index] == 'i' or s[index] == 'u':
+                print("There is an i or u")
+    
+        s = "demo loops - fruit loops"
+        for char in s:
+            if char == 'i' or char == 'u':
+                print("there is an i or u")
+    
+    
+    s = "demo loops - fruit loops"
+    for char in s:
+        if char in 'iu':
+            print("There is an i or u")
+    
+    
+    # rebot cheerleaders
+        an_letters = "aehilmnorsxAEFHILMNORS"
+        word = input("l will cheer for you! Enter a word: ")
+        times = int(input("Enthusiasm level (1-10): "))
+    
+    
+    for w in word:
+        if w in an_letters:
+            print(f'Give me an {c}: {c} ')
+            print("Give me an " + w + " :" w)
+        eles:
+        print("What does that spell?")
+            for i in range{time}:
+                print(word, "!!!")
+    
+    
+    
+    
+    
+    #guessing perfect square roots
+    x = int(input("Enter an integer: "))
+    guess = 0
+    while guess**2 < x:
+        guess +=1
+    if guess*2 == x:
+        print(f'square root of {x} is {guess}')
+    else:
+        print(f'{x} is not a perfect square')
+    
+    
+    
+    #square root with negative flag
+        guess  = 0
+        neg_flag = False
+        x = int(input("Enter a positive integer:  "))
+        if x < 0:
+            neg_flag = True
+        while guess**2 < x
+            guess = guess + 1
+        if guess**2 == x:
+            print(f'Square root of {x}is {guess}')
+        else:
+            print(f'Square root of {x} is {guess}')
+            if neg_flag:
+                print(f'just  checking... did you mean {x}?')
+    
+    
+    #cube root
+    # finding a perfect cube of positive numbers
+        cube = int(input("Enter an integer:  "))
+        for guess in range (cube+1):
+            if guess**3 == cube:
+                print(f'Cube root of {cube} is guess')
+                if guess**3 == cube:
+                    print(f'Cube root of {cube}is {guess}')
+    
+    
+    #finding a perfect cube of negative numbers
+        cube = int(input("Enter an integer: "))
+        for guess**3 == abs(cube):
+            if  cube < 0;
+                guess = -guess
+            print(f'Cube root of {str(cube)} is {str(guess)}')
+    
+    
+    
+    ##Write code that loops a for loop over some range
+    ##and prints how many even numbers are in that range. Try it with:
+        range(5)
+        range(10)
+        range(2,9,3)
+        range(-4,6,2)
+        range(5, 6)
+    
+    #Assume you are given a string of lowercase letters in variable s.
+    # Count how many unique letters there are in s. For example, if
+    # s = "abca" Then your code prints 3.
+     s 'abca'
+    seen =""
+    for char in s:
+        if char not in seen:
+            seen += char
+    print(len(seen))
+    
+    
+    # Hardcode a number as a secret number. Write a program that
+    # checks through all the numbers between 1 to 10 and prints the
+    # secret value. If it's not found, it doesn't print anything.
+     secret = 6
+     for i in range(1,11):
+         if i == secret:
+             print("found")
 
 
