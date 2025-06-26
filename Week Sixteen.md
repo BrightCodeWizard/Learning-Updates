@@ -37,7 +37,7 @@ Looping through an array.
 
      import java.sql.SQLOutput;
      
-     //24-06-2025
+  
      public class Arrays {
          public static  void main(String[]arg){
              /*int [] values = new int [5];
@@ -88,5 +88,19 @@ Looping through an array.
 
 
 
+  
+    public class Assignment {
+        public static void main (String[]arg){
+            String[]names = {
+                "Kofi", "Ama", "Kwame", "Kojo"
+            };
+            int []time = {
+                    200,220,230,210
+            };
+            for(int i = 0; i < names.length; i++){
+                System.out.println(names[i] +":" + time[i]);
+            }
+        }
+    }
 
 
