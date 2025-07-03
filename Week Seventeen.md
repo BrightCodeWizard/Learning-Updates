@@ -152,5 +152,216 @@ Overshooting issue
                 x+=0.022
                 print(x)
         
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Java**
+
+
+
+
+
+Summery of Java 
+
+Variable & types 
+Variable is a place where the program store data temporarily. Each variable has a type. Such as int, double, String. Variable must be declared before using it. 
+ 
+Operator
+Operator are used to perform operation on variables. 
+Types: 
+-	Arithmetic:  +, -, *, /, %
+-	Relational: ==,!=, <, >, >=, <=
+-	 Logical: &&, ||, !
+-	Assignment: =, +=, -= 
+
+Type conversions & casting
+Type conversion is the process of converting value from one data type to another.  
+Widening (automatic): smaller data type to lager. 
+Narrowing (manual / casting): larger data type to smaller.
+
+Methods & Parameters 
+Methods are block of code that’s perform tasks. You can pass parameters of them.
+
+ If Statement 
+used to make decisions in code. 
+
+Good programing style 
+1.	The code must readable, maintainable, and error-free
+2.	Use meaningful variable/method names 
+3.	Follow consistent indention 
+4.	Use comment to explain logic 
+5.	Avoid long methos – break into smaller functions 
+6.	Use camelCase for variable and methods 
+
+Loops 
+Loops are used to repeat action
+for loop
+while loop 
+do-while loop
+enhanced for loop (for arrays)
+
+Arrays 
+ Arrays store multiple value of the same datatype.
+ 
+
+
+    
+     public class Arrays {
+         public static void main(String[] args) {
+             int[] numbers = {1, 2, 3, 4, 5};//declaration and                                         initialization
+             System.out.println(numbers[0]);// Accessing element
+     
+             // looping through array
+             for (int i = 0; i < numbers.length; i++) {
+                 System.out.println("Number  " + (i + 1) + numbers[i]);
+             }
+         }
+     }
+
+
+
+
+     public class GoodPrograming {
+     
+         // This method prints a greeting
+         public static void printGreeting(String name) {
+             System.out.println("Hello " + name + "!");
+         }
+     
+         public static void main(String[] args) {
+             String name = "Edward"; // clear variable name
+             printGreeting(name); // readable method call
+         }
+     }
+
+
+
+          public class IFStatement {
+         public static void main(String[] args) {
+             int num = 20;
+     
+             if (num > 0) {
+                 System.out.println("Positive number");
+             } else if (num < 0) {
+                 System.out.println("number is negative");
+             }
+             else {
+                 System.out.println("zero");
+             }
+         }
+     }
+
+
+          public class Loops {
+              public static void main(String[] args) {
+                  // for loop
+                  for (int i = 0; i < 10; i++) {
+                      System.out.println("Count: " + i);
+                  }
+          
+                  // while loop
+                  int count = 0;
+                  while (count < 10) {
+                      System.out.println("Count: " + count);
+                      count++;
+                  }
+                  // enhance for loop
+                  int[] numbers = {1, 2, 3, 4, 5};
+                  for (int number : numbers) {
+                      System.out.println(number);
+                  }
+              }
+     }
+
+
+
+          //Methods and Parameters
+          public class Methods {
+              // Methods with parameters
+              public static int add(int a, int b) {
+                  return a + b;
+              }
+          
+              public static void main(String[] args) {
+                  int result = add(10, 20);// calling method
+                  System.out.println(result); // output: 30
+              }
+          }
+
+     
+
+
+          public class Operator {
+              public static void main(String[] args) {
+                  int a = 10, b = 20;
+                  int sum =  a+b;   // Arithmetic
+                  boolean result = a>b; // Relation
+                  boolean logic = (a > 5) && (b <10);
+                  System.out.println(sum);
+                  System.out.println(result);
+                  System.out.println(logic);
+              }
+          }
+
+
+
+     
+
+          // type conversion and casting
+          public class TypeConversion {
+              public static void main(String[] args) {
+                  // widening
+                  int a = 10;
+                  double b = a;
+          
+                  // narrowing
+                  double c = 10.5;
+                  int d = (int)c;
+          
+                  System.out.println(b);
+                  System.out.println(d);
+              }
+          }
+
+
+
+
+
+     // variable & types
+     public class Variable {
+         public static void main(String[] args) {
+             int age = 20; // integer type
+             double price = 1.75; // Floating-point type
+             char gender = 'M'; // character type
+             String name = "Bright"; // String (text)
+             boolean isMarried = true; // Boolean (true/ false)
+             System.out.println(age);
+             System.out.println(price);
+             System.out.println(gender);
+             System.out.println(name);
+             System.out.println(isMarried);
+          
+     
+
+
+
+
+
+
+
+
         
