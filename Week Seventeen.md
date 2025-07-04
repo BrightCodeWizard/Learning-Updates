@@ -364,4 +364,95 @@ Arrays
 
 
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**CS50**
+
+
+
+
+URL patterns: have placeholders, in effect, things that allow to parameterize the path via certain converter. they are used to map URLs (web addresses) to views (functions or classes that handle the request). They define what happens when a user visits a specific page on your website.
+
+
+
+
+
+
+
+
+          from django.shortcuts import render
+          from django.http import HttpResponse
+          
+          # Create your views here.
+          def index(request):
+              return render(request, "hello/index.html")
+          
+          
+          
+          def greet(request, name):
+              return HttpResponse(f"Hello, {name.capitalize()}!")
+          
+          def greet(request, name):
+              return render(request, "hello/greet.html", {
+                  "name": name.capitalize()
+              })
+          
+
+
+
+               from django.urls import path
+
+               from . import views
+               
+               urlpatterns = [
+                   path("",  views.index, name="index"),
+                   path("<str:name>/", views.greet, name="greet"),3
+               ]
+               
+               
+
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Document</title>
+     </head>
+     <body>
+         <h1>Hello,{{}} !</h1>
+     </body>
+     </html>
+     
+     
+
+
+          <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Document</title>
+     </head>
+     <body>
+         <h1>Hello, world!</h1>
+     </body>
+     </html>
+     
+     
+     
+     
+
