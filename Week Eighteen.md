@@ -335,3 +335,85 @@ Bisection search is a method that you can use to solve problems where there is s
 
 
 
+
+
+
+
+
+**CS50**
+
+     from django.shortcuts import render
+     
+     def calculator_view(request):
+         result = None
+         if request.method == "POST":
+             num1 = float(request.POST.get('num1'))
+             num2 = float(request.POST.get('num2'))
+             operation = request.POST.get('operation')
+     
+             if operation == "add":
+                 result = num1 + num2
+             elif operation == "subtract":
+                 result = num1 - num2
+             elif operation == "multiply":
+                 result = num1 * num2
+             elif operation == "divide":
+                 result = num1 / num2 if num2 != 0 else "Error (divide by zero)"
+         
+         return render(request, 'calculator/calculator.html', {'result': result})
+
+
+
+
+
+
+
+
+
+    
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Django Calculator</title>
+    </head>
+    <body>
+        <h1>Simple Calculator</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="number" step="any" name="num1" placeholder="First number" required>
+            <input type="number" step="any" name="num2" placeholder="Second number" required>
+            <br><br>
+            <select name="operation" required>
+                <option value="add">Add (+)</option>
+                <option value="subtract">Subtract (-)</option>
+                <option value="multiply">Multiply (*)</option>
+                <option value="divide">Divide (/)</option>
+            </select>
+            <br><br>
+            <button type="submit">Calculate</button>
+        </form>
+    
+        {% if result is not None %}
+            <h2>Result: {{ result }}</h2>
+        {% endif %}
+    </body>
+    </html>
+
+
+
+
+
+     
+     from django.urls import path
+     from .views import calculator_view
+     
+     urlpatterns = [
+         path('', calculator_view, name='calculator'),
+     ]
+
+
+
+
+
+
+
