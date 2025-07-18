@@ -74,3 +74,94 @@ Having multiple constructors with different parameters.
 
 
 
+
+
+
+  2. **MIT**
+
+
+
+
+
+
+
+
+
+
+DECOMPOSITION, ABSTRACTION, FUNCTIONS 
+
+Decomposition is the process of breaking a complex problem into smaller, manageable parts.
+
+
+
+Abstraction is hiding the complex details and showing only the important parts of the code.
+
+
+
+A function is a block of code that performs a specific task and can be reused.
+
+
+
+ Types of Functions:
+Built-in functions: print(), len(), int(), etc.
+
+User-defined functions: You create your own using def.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            # s = "car"
+            # s='b'+s[1:len(s)]
+            # print(s)
+            
+            
+            def input_scores():
+                test = float(input("Enter test score: "))
+                exam = float(input("Enter exam score: "))
+                return test, exam
+            
+            def calculate_total(test, exam):
+                return test + exam
+            
+            def calculate_average(total):
+                return total / 2
+            
+            def display_result(avg):
+                print("Your average is:", avg)
+            
+            # Main program (coordinating the parts)
+            test_score, exam_score = input_scores()
+            total = calculate_total(test_score, exam_score)
+            average = calculate_average(total)
+            display_result(average)
+            
+            
+            
+            def send_message(name):
+                print(f"Hello {name}, welcome to Python class!")
+            
+            send_message("Bright")
+            
+            
+            
+            
+            
+            
+            def add_numbers(a, b):
+                return a + b
+            
+            result = add_numbers(5, 3)
+            print("Sum is:", result)
+            
