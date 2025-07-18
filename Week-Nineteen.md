@@ -23,6 +23,37 @@ A constructor with no parameters.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 2.	Parameterized Constructor
 A constructor that accepts arguments to initialize object variables.
 
@@ -164,4 +195,133 @@ User-defined functions: You create your own using def.
             
             result = add_numbers(5, 3)
             print("Sum is:", result)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+**Django**
+
+
+
+
+
+student_app/models.py
+
+
+
+
+      from django.db import models
+      
+      class Student(models.Model):
+          name = models.CharField(max_length=100)
+          roll_number = models.CharField(max_length=20, unique=True)
+          email = models.EmailField()
+          date_of_birth = models.DateField()
+      
+          def __str__(self):
+              return self.name
+      
+      class Course(models.Model):
+          name = models.CharField(max_length=100)
+          code = models.CharField(max_length=10)
+      
+          def __str__(self):
+              return self.name
+      
+      class Enrollment(models.Model):
+          student = models.ForeignKey(Student, on_delete=models.CASCADE)
+          course = models.ForeignKey(Course, on_delete=models.CASCADE)
+      
+      class Attendance(models.Model):
+          student = models.ForeignKey(Student, on_delete=models.CASCADE)
+          course = models.ForeignKey(Course, on_delete=models.CASCADE)
+          date = models.DateField()
+          present = models.BooleanField(default=False)
+
+
+
+student_app/admin.py
+
+
+
+
+            from django.contrib import admin
+            from .models import Student, Course, Enrollment, Attendance
             
+            admin.site.register(Student)
+            admin.site.register(Course)
+            admin.site.register(Enrollment)
+            admin.site.register(Attendance)
+
+
+
+
+
+student_app/urls.py
+
+
+
+
+
+
+
+
+
+
+            from django.urls import path
+            from . import views
+            
+            urlpatterns = [
+                path('students/', views.student_list, name='student_list'),
+            ]
+
+
+
+
+
+
+templates/student_list.html
+
+
+
+
+
+
+
+
+
+
+            <h2>Student List</h2>
+            <ul>
+              {% for student in students %}
+                <li>{{ student.name }} ({{ student.roll_number }})</li>
+              {% endfor %}
+            </ul>
+
+
+
+
+
+
+
+      
