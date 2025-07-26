@@ -159,3 +159,205 @@ The store the directly the actual data.
 
 
 
+3. **CS50**
+
+
+
+
+                  
+
+
+   To-Do App!
+                  
+                  
+                  
+                  todo/models.py
+                  
+                  from django.db import models
+                  
+                  class Task(models.Model):
+                      title = models.CharField(max_length=200)
+                      complete = models.BooleanField(default=False)
+                      created = models.DateTimeField(auto_now_add=True)
+                  
+                      def __str__(self):
+                          return self.title
+                  
+                  
+                  
+                  
+                   todo/admin.py:
+                  
+                  
+                  from django.contrib import admin
+                  from .models import Task
+                  
+                  admin.site.register(Task)
+                  
+                  
+                  
+                   todo/urls.py:
+                  
+                  
+                  from django.urls import path
+                  from . import views
+                  
+                  urlpatterns = [
+                      path('', views.index, name='list'),
+                      path('update_task/<int:pk>/', views.updateTask, name='update_task'),
+                      path('delete_task/<int:pk>/', views.deleteTask, name='delete_task'),
+                  ]
+                  
+                  
+                  
+                  
+                  
+                  
+                  todoproject/urls.py, 
+                  
+                  from django.contrib import admin
+                  from django.urls import path, include
+                  
+                  urlpatterns = [
+                      path('admin/', admin.site.urls),
+                      path('', include('todo.urls')),
+                  ]
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  todo/views.py:
+                  
+                  
+                  
+                  from django.shortcuts import render, redirect
+                  from .models import Task
+                  from .forms import TaskForm
+                  
+                  def index(request):
+                      tasks = Task.objects.all()
+                      form = TaskForm()
+                  
+                      if request.method == 'POST':
+                          form = TaskForm(request.POST)
+                          if form.is_valid():
+                              form.save()
+                          return redirect('/')
+                  
+                      context = {'tasks': tasks, 'form': form}
+                      return render(request, 'todo/list.html', context)
+                  
+                  def updateTask(request, pk):
+                      task = Task.objects.get(id=pk)
+                      form = TaskForm(instance=task)
+                  
+                      if request.method == 'POST':
+                          form = TaskForm(request.POST, instance=task)
+                          if form.is_valid():
+                              form.save()
+                              return redirect('/')
+                  
+                      context = {'form': form}
+                      return render(request, 'todo/update_task.html', context)
+                  
+                  def deleteTask(request, pk):
+                      task = Task.objects.get(id=pk)
+                      if request.method == 'POST':
+                          task.delete()
+                          return redirect('/')
+                  
+                      context = {'task': task}
+                      return render(request, 'todo/delete_task.html', context)
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  todo/forms.py:
+                  
+                  
+                  from django import forms
+                  from .models import Task
+                  
+                  class TaskForm(forms.ModelForm):
+                      class Meta:
+                          model = Task
+                          fields = '__all__'
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  todo/templates/todo/
+                  
+                  <h2>To-Do List</h2>
+                  <form method="POST">
+                      {% csrf_token %}
+                      {{ form }}
+                      <input type="submit" value="Add Task">
+                  </form>
+                  
+                  <ul>
+                      {% for task in tasks %}
+                          <li>
+                              {{ task.title }}
+                              <a href="{% url 'update_task' task.id %}">Edit</a>
+                              <a href="{% url 'delete_task' task.id %}">Delete</a>
+                          </li>
+                      {% endfor %}
+                  </ul>
+                  
+                  
+                  
+                  
+                   update_task.html
+                  
+                  <h2>Update Task</h2>
+                  <form method="POST">
+                      {% csrf_token %}
+                      {{ form }}
+                      <input type="submit" value="Update">
+                  </form>
+                  
+                  
+                  
+                  delete_task.html
+                  
+                  <h2>Delete Task</h2>
+                  <p>Are you sure you want to delete "{{ task }}"?</p>
+                  <form method="POST">
+                      {% csrf_token %}
+                      <input type="submit" value="Yes, Delete">
+                  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
