@@ -149,3 +149,63 @@ It helps organize code, avoid naming conflicts, and control access.
 
 
 
+**MIT**
+
+
+
+
+
+
+
+
+
+Decomposition, Abstraction & Functions in Python
+Abstraction hides details, showing only the interface (inputs & outputs).
+Example: You use a smartphone without knowing its internal circuits.
+
+Decomposition breaks big problems into smaller, manageable parts.
+
+In programming: split tasks into functions.
+
+Functions = reusable building blocks of code. They:
+
+Have a name, parameters (inputs), docstring, body (logic), and return value (output).
+
+Are defined once, used many times.
+
+Support clear, modular, testable code.
+
+Docstrings act as contracts: specify what a function does, expected inputs, and outputs.
+
+Definition vs Call: Defining registers the function in memory; calling actually runs it.
+
+Return vs Print:
+
+print() displays a result (for humans).
+
+return sends a value back (for the program to use).
+
+
+
+
+             
+                def is_even(n):
+                 
+                print(is_even(4))  
+                print(is_even(7))  
+                
+                
+                def sum_of_odds(start, end):
+                
+                    total = 0
+                    for num in range(start, end + 1):
+                        if num % 2 != 0:   
+                            total += num
+                    return total
+                
+                
+                print(sum_of_odds(1, 10))   # 25 → (1+3+5+7+9)
+
+
+
+
