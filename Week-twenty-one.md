@@ -209,3 +209,133 @@ return sends a value back (for the program to use).
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+**CS50**
+
+**To‑Do App**
+
+
+
+todo/models.py
+       
+        from django.db import models
+        
+        class Task(models.Model):
+            title = models.CharField(max_length=200)
+            completed = models.BooleanField(default=False)
+        
+            def __str__(self):
+                return self.title
+
+
+
+
+
+
+
+todo/forms.py
+
+
+        from django import forms
+        from .models import Task
+        
+        class TaskForm(forms.ModelForm):
+            class Meta:
+                model = Task
+                fields = ['title', 'completed']
+
+
+
+
+
+todo/views.py
+      
+        from django.shortcuts import render, redirect
+        from .models import Task
+        from .forms import TaskForm
+        
+        def index(request):
+            tasks = Task.objects.all()
+            form = TaskForm()
+        
+            if request.method == 'POST':
+                form = TaskForm(request.POST)
+                if form.is_valid():
+                    form.save()
+                return redirect('/')
+        
+            return render(request, 'todo/index.html', {'tasks': tasks, 'form': form})
+
+
+
+
+
+todo/urls.py
+
+          
+
+        from django.urls import path
+        from . import views
+        
+        urlpatterns = [
+            path('', views.index, name='index'),
+        ]
+
+
+todoproject/urls.py
+
+        
+        from django.contrib import admin
+        from django.urls import path, include
+        
+        urlpatterns = [
+            path('admin/', admin.site.urls),
+            path('', include('todo.urls')),
+        ]
+
+
+todo/templates/todo/index.html
+
+                
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>To-Do App</title>
+                </head>
+                <body>
+                    <h1>My To-Do List</h1>
+                
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Add Task</button>
+                    </form>
+                
+                    <ul>
+                        {% for task in tasks %}
+                            <li>
+                                {{ task.title }} - 
+                                {% if task.completed %} Completed {% else %} Not Done {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </body>
+                </html>
+
+
+
+
+
+
