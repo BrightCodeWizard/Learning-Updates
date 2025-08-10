@@ -117,3 +117,128 @@ Some important ones are:
 
 
 
+
+
+
+
+4. MIT
+
+
+
+
+
+Function and Object 
+A function in Python is a named block of code that performs a specific task, can take inputs (parameters/arguments), and can optionally return an output.
+
+
+Object 
+An object is an instance of a class that stores data (attributes) and behavior (methods).
+Objects are created from classes, which act as blueprints
+
+
+
+
+
+
+
+                
+                
+                # Problem 1: Write a recursive program to calculate the sum of                     the positive
+                # integers of n+(n-2)+(n-4)... (until and not including n-x =< 0)
+                
+                def sum_series(n):
+                    if n <=0:
+                        return 0
+                    else:
+                        return n + sum_series(n-2)
+                
+                
+                
+                # Problem 2: Write a recursive program to calculate the value of 'a' to the power 'b'
+                def power(a, b):
+                    if b==0:
+                        return 1
+                    else:
+                        return a * power(a, b-1)
+                
+                
+                # Problem 3: Write a recursive program to calculate the sum of a list of numbers.
+                
+                def list_sum(num_List):
+                    if len(num_List) == 1:
+                        return num_List[0]
+                    else:
+                        return num_List[0] + list_sum(num_List[1:])
+                
+                
+                #Problem 4: Write a recurssive program to calculate the nth harmonic number
+                
+                def harmonic(n):
+                    if n == 1:
+                        return 1
+                    else:
+                        return 1/n + harmonic(n-1)
+                
+                
+                
+                
+                 #Extra - Problem 5: Write a recursive program to find the greatest common divisor (gcd)
+                # of two integers.
+                def gcd(a,b):
+                    if(b==0):
+                        return a
+                    else:
+                        return gcd(b,a%b)
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                # 1. Function to add two numbers
+                def add_numbers(a, b):
+                    return a + b
+                
+                print(add_numbers(3, 5))
+                
+                
+                # 2. Function to check if a number is even
+                def is_even(num):
+                    return num % 2 == 0
+                
+                print(is_even(4))
+                print(is_even(7))
+                
+                
+                # 3. Function to reverse a string
+                def reverse_string(s):
+                    return s[::-1]
+                
+                print(reverse_string("Python"))
+                
+                
+                # 4. Function to calculate area of a circle
+                def calculate_area(radius):
+                    return 3.14 * radius ** 2
+                
+                print(calculate_area(5))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
