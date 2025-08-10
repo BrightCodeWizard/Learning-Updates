@@ -237,6 +237,168 @@ Objects are created from classes, which act as blueprints
 
 
 
+ **3. CS50**
+
+
+
+
+
+
+ Task Manager
+
+
+
+taskmanager/settings.py
+ 
+
+        INSTALLED_APPS = [
+            'django.contrib.admin',
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
+            'django.contrib.sessions',
+            'django.contrib.messages',
+            'django.contrib.staticfiles',
+            'tasks',  # add our app here
+        ]
+
+
+
+
+tasks/models.py
+
+
+    from django.db import models
+
+    class Task(models.Model):
+        title = models.CharField(max_length=200)
+        completed = models.BooleanField(default=False)
+    
+        def __str__(self):
+            return self.title
+
+
+
+
+tasks/admin.py
+
+    
+    from django.contrib import admin
+    from .models import Task
+    
+    admin.site.register(Task)
+
+
+
+
+
+tasks/views.py
+
+
+
+
+
+        from django.shortcuts import render, redirect
+        from .models import Task
+        
+        def task_list(request):
+            tasks = Task.objects.all()
+            return render(request, 'tasks/task_list.html', {'tasks': tasks})
+        
+        def add_task(request):
+            if request.method == 'POST':
+                title = request.POST['title']
+                Task.objects.create(title=title)
+                return redirect('task_list')
+            return render(request, 'tasks/add_task.html')
+        
+        def delete_task(request, task_id):
+            task = Task.objects.get(id=task_id)
+            task.delete()
+            return redirect('task_list')
+
+
+
+
+
+tasks/urls.py
+
+    
+    from django.urls import path
+    from . import views
+    
+    urlpatterns = [
+        path('', views.task_list, name='task_list'),
+        path('add/', views.add_task, name='add_task'),
+        path('delete/<int:task_id>/', views.delete_task, name='delete_task'),
+    ]
+
+
+
+taskmanager/urls.py
+
+    
+    
+    from django.contrib import admin
+    from django.urls import path, include
+    
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('', include('tasks.urls')),
+    ]
+
+
+
+
+
+
+task_list.html
+
+    
+    <h1>Task List</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title }} 
+                <a href="{% url 'delete_task' task.id %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_task' %}">Add Task</a>
+    
+    
+    
+
+
+
+
+
+
+
+add_task.html
+
+
+
+    <h1>Add Task</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Task title" required>
+        <button type="submit">Add</button>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
