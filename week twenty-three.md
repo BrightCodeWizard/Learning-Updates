@@ -256,3 +256,90 @@ todoproject/urls.py
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+B. Java
+
+
+
+
+
+
+
+
+
+
+     
+     
+     import java.util.ArrayList;
+     import java.util.Scanner;
+     
+     public class SimpleTodoList {
+         public static void main(String[] args) {
+             ArrayList<String> todos = new ArrayList<>();
+             Scanner sc = new Scanner(System.in);
+             int choice;
+     
+             do {
+                 System.out.println("\n==== TODO LIST MENU ====");
+                 System.out.println("1. Add a task");
+                 System.out.println("2. View tasks");
+                 System.out.println("3. Remove a task");
+                 System.out.println("4. Exit");
+                 System.out.print("Choose an option: ");
+                 choice = sc.nextInt();
+                 sc.nextLine();
+     
+                 switch (choice) {
+                     case 1 -> {
+                         System.out.print("Enter task: ");
+                         String task = sc.nextLine();
+                         todos.add(task);
+                         System.out.println("Task added!");
+                     }
+                     case 2 -> {
+                         System.out.println("\nYour tasks:");
+                         if (todos.isEmpty()) {
+                             System.out.println("No tasks yet.");
+                         } else {
+                             for (int i = 0; i < todos.size(); i++) {
+                                 System.out.println((i + 1) + ". " + todos.get(i));
+                             }
+                         }
+                     }
+                     case 3 -> {
+                         System.out.print("Enter task number to remove: ");
+                         int num = sc.nextInt();
+                         if (num > 0 && num <= todos.size()) {
+                             todos.remove(num - 1);
+                             System.out.println("Task removed!");
+                         } else {
+                             System.out.println("Invalid task number.");
+                         }
+                     }
+                     case 4 -> System.out.println("Goodbye!");
+                     default -> System.out.println("Invalid choice, try again.");
+                 }
+             } while (choice != 4);
+     
+             sc.close();
+         }
+     }
+
